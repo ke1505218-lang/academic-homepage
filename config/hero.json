@@ -1,0 +1,43 @@
+{
+  "name": "Ke Liu",
+  "title": "Undergraduate · Incoming Ph.D. Student",
+  "profileImage": "assets/ke-liu-avatar.svg",
+  "brandLogo": "assets/ke-liu-brand.svg",
+  "descriptions": [
+    {
+      "icon": "openai",
+      "text": "Deep Learning · Graph Neural Networks"
+    },
+    {
+      "icon": "sparkles",
+      "text": "AI for Pathology · WSI · AI Agents"
+    }
+  ],
+  "primaryLinks": [
+    {
+      "label": "ORCID",
+      "url": "https://orcid.org/0009-0000-9091-9149"
+    },
+    {
+      "label": "Academic Email",
+      "url": "mailto:42342022@smai.swufe.edu.cn"
+    }
+  ],
+  "socialLinks": [
+    {
+      "label": "Email",
+      "icon": "email",
+      "url": "mailto:ke1505218@gmail.com"
+    },
+    {
+      "label": "GitHub",
+      "icon": "github",
+      "url": "https://github.com/ke1505218-lang"
+    },
+    {
+      "label": "LinkedIn",
+      "icon": "linkedin",
+      "url": "https://www.linkedin.com/in/%E5%8F%AF-%E5%88%98-5597253b9/"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "paragraphs": [
+    [
+      {
+        "text": "I am Ke Liu, an undergraduate student in the School of Mathematics at Southwestern University of Finance and Economics, and an incoming Ph.D. student at Renmin University of China."
+      }
+    ],
+    [
+      {
+        "text": "My research focuses on deep learning, graph neural networks, and computational pathology, particularly whole slide image (WSI) analysis. I am also interested in machine learning and AI agents."
+      }
+    ],
+    [
+      {
+        "text": "I am the first author of GHH-MIL, published at ACM Multimedia."
+      }
+    ]
+  ],
+  "quote": {
+    "text": "Deep learning · Graph neural networks · Whole slide image analysis",
+    "author": "Research interests"
+  }
+}

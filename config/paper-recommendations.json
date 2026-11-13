@@ -1,0 +1,17 @@
+{
+  "enabled": false,
+  "endpoint": "",
+  "limit": 4,
+  "cacheMinutes": 30,
+  "daily": {
+    "enabled": false,
+    "limit": 4,
+    "cacheMinutes": 360,
+    "keywords": [
+      "Computational Pathology",
+      "Whole Slide Image",
+      "Graph Neural Networks",
+      "AI Agents"
+    ]
+  }
+}

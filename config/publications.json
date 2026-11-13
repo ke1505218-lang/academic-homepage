@@ -1,0 +1,26 @@
+[
+  {
+    "id": "ghh-mil",
+    "title": "GHH-MIL: geodesic harmonic hyper-sphere multiple instance learning for whole slide image classification",
+    "image": "assets/ghh-mil.svg",
+    "authors": [
+      {
+        "text": "Ke Liu",
+        "strong": true
+      }
+    ],
+    "authorTag": {
+      "label": "First author",
+      "type": "author"
+    },
+    "venue": "ACM Multimedia",
+    "venueType": "conference",
+    "tags": [
+      "Computational Pathology",
+      "Whole Slide Images",
+      "Multiple Instance Learning"
+    ],
+    "link": "#ghh-mil",
+    "citation": "Full author list and bibliographic details to be added."
+  }
+]
