@@ -1,6 +1,7 @@
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
+import Experience from './components/Experience';
 import Publications from './components/Publications';
 import Footer from './components/Footer';
 import './App.css';
@@ -22,6 +23,7 @@ function App() {
                         <Publications />
                         
                         <AcademicBackground />
+                        <Experience />
                         
                     </div>
                 </div>

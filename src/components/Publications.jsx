@@ -83,7 +83,7 @@ export default function Publications() {
                 </div>
               </div>
               <div className="publication-tags">{paper.tags.map((tag) => <span className="tag-item-show" key={tag}>{tag}</span>)}</div>
-              <div className="publication-links" style={paper.id === "ghh-mil" ? { display: "none" } : undefined}>
+              <div className="publication-links">
                 <a href={paper.link} target="_blank" rel="noreferrer"><AiOutlineFileText aria-hidden="true" />Paper</a>
                 <button className={`publication-cite${copiedPaper === paper.id ? " is-copied" : ""}`} type="button" onClick={(event) => copyCitation(paper, event)}>
                   {copiedPaper === paper.id ? <AiOutlineCheck aria-hidden="true" /> : <AiOutlineCopy aria-hidden="true" />}
