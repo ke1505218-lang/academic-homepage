@@ -13,31 +13,31 @@ test("JSONC supports comments without corrupting strings", () => {
   assert.throws(() => parseConfig('{"value":}', "broken.json"), /broken.json:1:/);
 });
 test("missing required fields report their file and location", () => {
-  const config = loadConfigs();
+  const config = fixtureConfigs();
   delete config["hero.json"].primaryLinks;
   assert.match(validateConfigs(config).join("\n"), /hero.json.*primaryLinks/);
 });
 test("duplicate publication IDs and unknown preview IDs are rejected", () => {
-  const config = loadConfigs();
+  const config = fixtureConfigs();
   config["publications.json"][1].id = config["publications.json"][0].id;
   const errors = validateConfigs(config).join("\n");
   assert.match(errors, /duplicate ID/);
   assert.match(errors, /leaf: no publication/);
 });
 test("publications without custom previews are valid", () => {
-  const config = loadConfigs();
+  const config = fixtureConfigs();
   config["publication-previews.json"] = {};
   assert.deepEqual(validateConfigs(config), []);
 });
 test("missing assets and invalid chart values are rejected", () => {
-  const config = loadConfigs();
+  const config = fixtureConfigs();
   config["publication-previews.json"]["dpc-vqa"].rows[0].value = "2";
   const errors = validateConfigs(config, () => false).join("\n");
   assert.match(errors, /asset not found/);
   assert.match(errors, /rows\/0\/value/);
 });
 test("layout-specific fields and unknown keys are checked", () => {
-  const config = loadConfigs();
+  const config = fixtureConfigs();
   delete config["publication-previews.json"].leaf.ablationRows;
   assert.match(validateConfigs(config).join("\n"), /ablationRows: required/);
   config["education.json"].enable = true;
@@ -45,7 +45,7 @@ test("layout-specific fields and unknown keys are checked", () => {
 });
 
 test("fixed templates support minimal basic, narrative and legacy layout configs", () => {
-  const config = loadConfigs();
+  const config = fixtureConfigs();
   const original = config["publication-previews.json"]["dpc-vqa"];
   config["publication-previews.json"]["dpc-vqa"] = { template: "basic", abstractExpanded: true };
   assert.deepEqual(validateConfigs(config), []);
@@ -62,3 +62,16 @@ test("fixed templates support minimal basic, narrative and legacy layout configs
   delete config["publication-previews.json"]["dpc-vqa"].template;
   assert.deepEqual(validateConfigs(config), []);
 });
+
+function fixtureConfigs() {
+  const config = loadConfigs();
+  const paper = config["publications.json"][0];
+  config["publications.json"] = [{...paper, id:"dpc-vqa"}, {...paper, id:"leaf"}];
+  const narrative = {takeaway:"Example",intro:"Example",headline:"Example",method:"Example",figure:paper.image,figureCaption:"Example",steps:[]};
+  const result = {highlight:"Example",highlightLabel:"Example",highlightContext:"Example",resultTitle:"Example",resultNote:"Example",source:"#example",sourceLabel:"Example",footnote:"Example"};
+  config["publication-previews.json"] = {
+    "dpc-vqa": {...narrative,...result,template:"comparison",rows:[{label:"Example",value:"0.8",reference:"0.7",referenceLabel:"Baseline"}]},
+    leaf: {...narrative,...result,template:"budget",rows:[{label:"10%",value:"0.8",secondary:"0.7"}],ablationRows:[{label:"Example",value:"0.7"}]}
+  };
+  return config;
+}
